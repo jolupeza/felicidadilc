@@ -1,0 +1,14 @@
+wp-admin/*
+wp-includes/*
+wp-content/themes/twentyfifteen/*
+wp-content/themes/twentyfourteen/*
+wp-content/themes/twentythirteen/*
+wp-content/themes/felicidad/.sass-cache/*
+wp-content/uploads/*
+wp-content/plugins/akismet/*
+wp-content/plugins/hello.php
+
+resources/*
+scripts/*
+
+/wp-config.php
