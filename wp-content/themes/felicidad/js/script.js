@@ -33,8 +33,8 @@ var map;
       resizeVideo('426', '240');
     }
 
-    if($window.width() < 400) {
-      resizeVideo('100%', 'auto');
+    if($window.width() < 450) {
+      resizeVideo('320', '240');
     }
 
     bottomFooter();
@@ -968,13 +968,13 @@ var map;
         'z-index': 9,
       });
     });
+  });
 
-    function bottomFooter()
+  function bottomFooter()
     {
       var heightFooter = $footer.outerHeight();
       $footer.css('bottom', -heightFooter + 'px');
     }
-  });
 
   // function loadInfoMaps(ciudad, page, distrito, tag)
   function loadInfoMaps(ciudad, page, distrito)

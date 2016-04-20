@@ -2947,7 +2947,7 @@ input:-moz-placeholder
 	background-repeat: no-repeat
 	background-size: contain
 	margin-bottom: 20px
-	min-height: 460px
+	// min-height: 460px
 	padding: 30px 0
 .Felicidad-info
 	background-color: #FFF
@@ -3046,14 +3046,17 @@ input:-moz-placeholder
 					background-image: none
 	.Felicidad-item
 		background-image: none
-		min-height: auto
+		min-height: 0
 		padding: 0
-@media only screen and (max-width: 400px)
+	.Felicidad-title
+		span
+			padding: 0 15px
+@media only screen and (max-width: 500px)
 	.Felicidad-title
 		background-image: none
 		font-size: 1.8em
-		span
-			padding: 0 15px
+		// span
+		// 	padding: 0 15px
 	.Felicidad-msg
 		padding: 0
 		&::before, &::after

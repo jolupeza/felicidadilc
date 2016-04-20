@@ -4,7 +4,6 @@
 
 	<main class="main">
         <div class="container">
-
         	<?php
         		$thisCat = get_category(2);
         	?>
@@ -73,9 +72,9 @@
 							      		width = '426';
 								    }
 
-								    if(window.innerWidth < 400) {
-							      		height = 'auto';
-							      		width = '100%';
+								    if(window.innerWidth < 450) {
+							      		height = '240';
+							      		width = '320';
 								    }
 
 							      // 3. This function creates an <iframe> (and YouTube player)
@@ -151,7 +150,7 @@
 								<article class="Felicidad-item">
 									<?php if(has_post_thumbnail()) : ?>
 										<figure class="Felicidad-figure">
-											<?php the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
+											<?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
 										</figure><!-- end Felicidad-figure -->
 									<?php endif; ?>
 									<div class="Felicidad-info">
