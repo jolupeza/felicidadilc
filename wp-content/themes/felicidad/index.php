@@ -3,10 +3,8 @@
 	<?php include_once( TEMPLATEPATH . '/includes/sliders-felicidad.php'); ?>
 
 	<main class="main">
-        <div class="container">
-        	<?php
-        		$thisCat = get_category(2);
-        	?>
+    <div class="container">
+    	<?php $thisCat = get_category(2); ?>
 
 			<section class="Felicidad">
 
@@ -134,8 +132,8 @@
 	        	<!-- Post -->
 	        	<?php
 	        		$args = array(
-	        			'posts_per_page' => 6,
-	        			'cat' => 2
+								'category_name' => 'la-felicidad-en-minutos',
+                'post_type' => 'post'
         			);
         			$the_query = new WP_Query($args);
 	        	?>
@@ -183,16 +181,16 @@
 								$format = ( get_option('permalink_structure' ) == '/%postname%/') ? 'page/%#%/' : '&paged=%#%';
 
 								echo paginate_links(array(
-				                    'base'      =>    get_pagenum_link(1) . '%_%',
-				                    'format'    =>    $format,
-				                    'current'   =>    $current_page,
-				                    'prev_next' =>    True,
-				                    'prev_text' =>    __('&laquo;', THEMEDOMAIN),
-				                    'next_text' =>    __('&raquo;', THEMEDOMAIN),
-				                    'total'     =>    $total,
-				                    'mid_size'  =>    4,
-				                    'type'      =>    'list'
-	                  			));
+                  'base'      =>    get_pagenum_link(1) . '%_%',
+                  'format'    =>    $format,
+                  'current'   =>    $current_page,
+                  'prev_next' =>    True,
+                  'prev_text' =>    __('&laquo;', THEMEDOMAIN),
+                  'next_text' =>    __('&raquo;', THEMEDOMAIN),
+                  'total'     =>    $total,
+                  'mid_size'  =>    4,
+                  'type'      =>    'list'
+          			));
 							?>
 
 		              		</nav>

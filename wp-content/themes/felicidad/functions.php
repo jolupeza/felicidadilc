@@ -643,12 +643,14 @@ add_action('pre_get_posts', 'set_customs_var_query');
 
 function set_customs_var_query($query)
 {
-	if ( $query->is_category( 'novedades' ) || $query->is_category('la-felicidad') ) {
-		$query->set('posts_per_page', 6);
+	if (is_home() && $query->is_category('la-felicidad-en-minutos')) {
+		$url = get_current_page_url();
+		$urlParts = explode('/', $url);
+		if (count($urlParts) === 5) {
+			$query->set('paged', $urlParts[4]);
+		}
 	}
 }
-
-
 
 
 /**********************************************************************************/
@@ -658,6 +660,20 @@ function separteTitle($title)
 {
 	$arrTitle = explode(' ', $title);
 	return array_shift($arrTitle) . ' <span>' . implode(' ', $arrTitle) . '</span>';
+}
+
+
+if ( ! function_exists( 'get_current_page_url' ) ) {
+	function get_current_page_url() {
+  	global $wp;
+  	return add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+	}
+}
+
+if ( ! function_exists( 'the_current_page_url' ) ) {
+	function the_current_page_url() {
+	  echo get_current_page_url();
+	}
 }
 
 
@@ -737,6 +753,3 @@ if (!function_exists('dump_exit')) {
         exit;
     }
 }
-
-
-
